@@ -1,0 +1,65 @@
+analog-clock{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 12em;
+  height: 12em;
+
+  border: 0.5em solid black;
+  border-radius: 50%;
+
+  background-color: white;
+}
+
+.analog-clock-face{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+}
+
+.analog-clock-dot{
+  position: absolute;
+
+  width: .7em;
+  height: .7em;
+
+  border-radius: 50%;
+  
+  background-color: black;
+}
+
+.analog-clock-hand{
+  position: absolute;
+
+  rotate: 0deg;
+  transform: translateX(50%);
+
+  width: 40%;
+  height: 0.5em;
+
+  border-radius: 1em;
+
+  background-color: black;
+}
+
+.minute-hand{
+  width: 35%;
+  height: .2em;
+}
+
+.hour-hand{
+  width: 25%;
+  height: .4em;
+}
+
+.second-hand{
+  height: .1em;
+  transform: translateX(25%);
+  width: 50%;
+}

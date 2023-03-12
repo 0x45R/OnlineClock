@@ -38,8 +38,6 @@ class AnalogClock extends HTMLElement{
     let minutesRotation = (minutes+secondsRotation)/60;
     let hoursRotation = (hours+minutesRotation)/12;
 
-    console.log(milliseconds, seconds, secondsRotation)
-
     this.hourHand.style.rotate = hoursRotation*360+offset+"deg"
     this.minuteHand.style.rotate = minutesRotation*360+offset+"deg"  
     this.secondHand.style.rotate = secondsRotation*360+offset+"deg"

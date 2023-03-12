@@ -21,7 +21,7 @@ class AnalogClock extends HTMLElement{
 
   connectedCallback(){
     this.clockTick();
-    setInterval(()=>{this.clockTick()}, 1000);
+    setInterval(()=>{this.clockTick()}, 10);
   }
 
   clockTick(){
@@ -29,13 +29,16 @@ class AnalogClock extends HTMLElement{
 
     let date = new Date();
 
+    let milliseconds = date.getMilliseconds();
     let seconds = date.getSeconds();
     let minutes = date.getMinutes();
     let hours = date.getHours();
 
-    let secondsRotation = seconds/60;
+    let secondsRotation = (seconds+milliseconds/1000)/60;
     let minutesRotation = (minutes+secondsRotation)/60;
     let hoursRotation = (hours+minutesRotation)/12;
+
+    console.log(milliseconds, seconds, secondsRotation)
 
     this.hourHand.style.rotate = hoursRotation*360+offset+"deg"
     this.minuteHand.style.rotate = minutesRotation*360+offset+"deg"  
